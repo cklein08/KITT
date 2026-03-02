@@ -18,7 +18,7 @@ KITT extends Claude Code with capabilities designed for EA use-case workflows:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_ORG/KITT.git
+   git clone https://github.com/cklein08/KITT.git
    cd KITT
    ```
 
