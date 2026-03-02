@@ -16,11 +16,10 @@
 
 ## User Profile
 
-<!-- SETUP: Replace this section with actual user info -->
+**Name:** Carolyn
+**Role:** Enterprise Architect
 
-**Status: NOT CONFIGURED**
-
-To complete setup, tell me a bit about yourself and I'll fill this in.
+**Use-case focus:** Content delivery
 
 ---
 
