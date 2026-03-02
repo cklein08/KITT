@@ -1,3 +1,6 @@
+# Applies only to files within this repository (KITT folder).
+# Git ignores are scoped to this repo; they do not affect sibling or parent directories.
+
 # Environment files
 .env
 *.env
