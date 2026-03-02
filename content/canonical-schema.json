@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Canonical Use-Case",
+  "type": "object",
+  "properties": {
+    "useCaseId": {
+      "type": "string",
+      "description": "Auto-generated unique ID"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "description": "Short descriptive title"
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "1-2 sentence problem + desired outcome"
+    },
+    "businessContext": {
+      "type": "object",
+      "properties": {
+        "drivers": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "successMetrics": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "customerProfile": {
+      "type": "object",
+      "properties": {
+        "vertical": { "type": "string" },
+        "companySize": { "type": "string" },
+        "regions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "constraints": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "currentState": {
+      "type": "object",
+      "properties": {
+        "architectureSummary": { "type": "string" },
+        "products": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "dataSources": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "dataVolumes": {
+          "type": "object",
+          "properties": {
+            "eventsPerDay": { "type": "integer" },
+            "peakRPS": { "type": "integer" }
+          }
+        }
+      }
+    },
+    "desiredState": {
+      "type": "object",
+      "properties": {
+        "productsExpected": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "functionalScope": { "type": "string" },
+        "nonFunctional": {
+          "type": "object",
+          "properties": {
+            "latencyMs": { "type": "integer" },
+            "availabilityPercent": { "type": "number" },
+            "throughput": { "type": "string" }
+          }
+        }
+      }
+    },
+    "technicalDetails": {
+      "type": "object",
+      "properties": {
+        "dataTypes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "estimatedIngestRate": {
+          "type": "object",
+          "properties": {
+            "avgRPS": { "type": "integer" },
+            "peakRPS": { "type": "integer" }
+          }
+        },
+        "profileCounts": {
+          "type": "object",
+          "properties": {
+            "estimatedProfiles": { "type": "integer" }
+          }
+        },
+        "integrationEndpoints": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "licensingEntitlements": {
+      "type": "object",
+      "description": "List known licenses/tier per product",
+      "additionalProperties": { "type": "string" }
+    },
+    "guardrails": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product": { "type": "string" },
+          "limitType": { "type": "string" },
+          "value": {}
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "risk": { "type": "string" },
+          "likelihood": { "type": "string" },
+          "mitigation": { "type": "string" }
+        }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "link": { "type": "string" }
+        }
+      }
+    },
+    "effortEstimate": {
+      "type": "object",
+      "properties": {
+        "devEffort": { "type": "string" },
+        "weeks": { "type": "integer" },
+        "notes": { "type": "string" }
+      }
+    },
+    "clarifyingQuestions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Auto-generated intake questions the agent should ask"
+    },
+    "desiredAgentOutputs": {
+      "type": "object",
+      "properties": {
+        "dossier": { "type": "boolean" },
+        "topArchitectures": { "type": "integer" },
+        "rfpDraft": { "type": "boolean" },
+        "slideSummary": { "type": "boolean" },
+        "lucidDiagram": { "type": "boolean" }
+      }
+    },
+    "implementationNotes": {
+      "type": "object",
+      "properties": {
+        "startDate": { "type": "string", "format": "date" },
+        "endDate": { "type": "string", "format": "date" },
+        "postMortem": { "type": "string" }
+      }
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "url": { "type": "string" }
+        }
+      }
+    },
+    "owner": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string", "format": "email" }
+      }
+    },
+    "reviewers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "email": { "type": "string", "format": "email" }
+        }
+      }
+    }
+  },
+  "required": ["title", "summary", "businessContext", "owner"],
+  "additionalProperties": false
+}

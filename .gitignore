@@ -1,0 +1,43 @@
+# Environment files
+.env
+*.env
+
+# Credentials (if using integrations)
+credentials_*.json
+client_secret_*.json
+token_*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+*.egg-info/
+
+# Node (if using JS integrations)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+# MCP config with secrets (use .cursor/mcp.json.example as template)
+.cursor/mcp.json
+*.swp
+*.swo
+
+# Database (if using local DB)
+*.db
+*.sqlite
+
+# Vector DB / embeddings
+.chroma/
+*.chroma
+chroma/
+
+# Keep these tracked
+!.gitkeep

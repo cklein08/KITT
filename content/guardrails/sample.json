@@ -1,0 +1,79 @@
+{
+  "description": "Sample product guardrails and limits for KITT use-case-check. Extend with product-specific files.",
+  "products": [
+    {
+      "product": "AEP",
+      "limits": [
+        {
+          "limitType": "peakRPS",
+          "value": 1500,
+          "unit": "requests per second",
+          "notes": "Adobe Experience Platform streaming ingestion peak RPS"
+        },
+        {
+          "limitType": "batchIngestVolume",
+          "value": "50M",
+          "unit": "events per day",
+          "notes": "Typical batch ingestion volume limit"
+        },
+        {
+          "limitType": "profileCount",
+          "value": "varies by tier",
+          "unit": "profiles",
+          "notes": "Check licensing for Enterprise vs Standard"
+        }
+      ]
+    },
+    {
+      "product": "AJO",
+      "limits": [
+        {
+          "limitType": "throughput",
+          "value": "varies",
+          "unit": "messages/hour",
+          "notes": "Adobe Journey Optimizer message throughput; check tier"
+        },
+        {
+          "limitType": "apiRateLimit",
+          "value": 100,
+          "unit": "requests per second",
+          "notes": "API rate limit for Journey Optimizer"
+        }
+      ]
+    },
+    {
+      "product": "AEM",
+      "limits": [
+        {
+          "limitType": "authorInstanceLimit",
+          "value": "varies",
+          "unit": "instances",
+          "notes": "Cloud Service vs on-prem; check contract"
+        },
+        {
+          "limitType": "publishThroughput",
+          "value": "varies",
+          "unit": "requests per second",
+          "notes": "CDN/Dispatcher dependent"
+        }
+      ]
+    }
+  ],
+  "riskPatterns": [
+    {
+      "pattern": "highRPS",
+      "description": "Use case requires RPS above product limits",
+      "mitigation": "Consider batching, rate limiting, or tier upgrade"
+    },
+    {
+      "pattern": "licensingGap",
+      "description": "Required product/tier not in current entitlements",
+      "mitigation": "Verify with Panorama or sales; document gap for procurement"
+    },
+    {
+      "pattern": "dataResidency",
+      "description": "Customer requires data in specific region",
+      "mitigation": "Confirm product supports region; check AEP data residency options"
+    }
+  ]
+}

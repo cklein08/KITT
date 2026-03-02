@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "EasyMCP-Adobe-Wiki-Confluence": {
+      "command": "npx",
+      "args": ["-y", "@easymcp/easymcp"],
+      "env": {
+        "EASYMCP_TOKEN": "YOUR_TOKEN_FROM_EASYMCP_NET"
+      }
+    },
+    "tts-mcp": {
+      "command": "npx",
+      "args": ["-y", "tts-mcp", "tts-mcp-server", "--voice", "onyx", "--model", "tts-1-hd"],
+      "env": {
+        "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY"
+      }
+    }
+  }
+}
